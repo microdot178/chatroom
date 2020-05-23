@@ -4,6 +4,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from rest_framework import generics
 from page.serializers import *
+#from django.contrib.auth.decorators import login_required
 
 class PageSerializerView(generics.ListAPIView):
     serializer_class = PostSerializer

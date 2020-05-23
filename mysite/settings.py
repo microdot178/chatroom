@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'page',
     'widget_tweaks',
     'rest_framework',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -108,6 +109,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'REDIRECT'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.linkedin.LinkedinOAuth2',
+    'social_core.backends.instagram.InstagramOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+]
+
+SOCIAL_AUTH_INSTAGRAM_KEY = 'xxxxxxxxxxxxxxxxxxxx'         #Client ID
+SOCIAL_AUTH_INSTAGRAM_SECRET = 'xxxxxxxxxxxxxxxxxxxx'  #Client SECRET
+SOCIAL_AUTH_INSTAGRAM_EXTRA_DATA = [               
+            ('user', 'user'),
+            ]
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7476454'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'Zu90DQ7sHAAkoNVoLl7b' 
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

@@ -9,7 +9,7 @@ urlpatterns = [
     path('', include('page.urls')),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
-    url(r'^api-auth/', include('rest_framework.urls'))
-    
+    url(r'^api-auth/', include('rest_framework.urls')),
+    path('social-auth/', include('social_django.urls', namespace="social")),  
 ]
 
